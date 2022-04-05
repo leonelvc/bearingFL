@@ -38,7 +38,6 @@ class custom_data_handler(DataHandler):
             raise FLException(
             'No data file name is provided to load the dataset.')
         else:
-            try:
                 print('Loaded training data from' + str(self.file_name))
                 rms_data = pd.read_csv(self.file_name, allow_pickle=True)
                 X, y = rms_data.drop('rms',axis=1), rms_data['rms']
@@ -46,10 +45,9 @@ class custom_data_handler(DataHandler):
                 print('Shape of y:', y.shape)
                 X = np.array(X)
                 y = np.array(y)
-                #70-30 split
+                #80-20 split
                 self.x_train, self.x_test, self.y_train, self.y_test =\
                     train_test_split(X,y,test_size=0.2, random_state=42)
-            pass
 
 
     
@@ -69,5 +67,3 @@ class custom_data_handler(DataHandler):
         # return (x_train, y_train), (x_test, y_test)
         """
         return (self.x_train, self.y_train), (self.x_test, self.y_test)
-        
-        pass

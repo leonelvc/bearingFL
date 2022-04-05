@@ -5,6 +5,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 
 from ibmfl.data.data_handler import DataHandler
+from ibmfl.exceptions import FLException
 
 class CustomDatahHandler(DataHandler):
     """
@@ -16,7 +17,7 @@ class CustomDatahHandler(DataHandler):
         if data_config is not None:
             if 'csv_file' in data_config:
                 self.file_name = data_config['csv_file']
-            # extract other additional parameters from `info` if any.
+            # extract other additional parameters from `info` if any
 
         # load and preprocess the training and testing data
         self.load_and_preprocess_data()

@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 from ibmfl.data.data_handler import DataHandler
 
-class custom_data_handler(DataHandler):
+class CustomDatahHandler(DataHandler):
     """
     Data handler for your dataset.
     """

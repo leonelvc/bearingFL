@@ -46,6 +46,9 @@ class CustomDataHandler(DataHandler):
         except Exception:
             raise IOError('Unable to load training data from path provided in config file:' + self.file_name)
         return training_dataset
+    
+    def preprocess(self, training_dataset):
+        return training_dataset
 
         
                 

@@ -30,22 +30,6 @@ class CustomDataHandler(DataHandler):
         self.training_dataset = self.preprocess(training_dataset)
         
 
-            
-'''
-        if self.file_name is None:
-            raise FLException('No data file name is provided to load the dataset.')
-        else:
-            try:
-                rms_data = pd.read_csv(self.file_name)
-                X,y = rms_data.drop('rms',axis=1), rms_data['rms']
-                X = np.ndarray(X)
-                y = np.ndarray(y)
-                self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(X,y,test_size=0.2, random_state=42)
-                except Exception:
-                    raise IOError('Unable to load training data from path '
-                              'provided in config file: ' +
-                              self.file_name)
-'''
     def get_data(self):
 
         return (self.x_train, self.y_train),(self.x_test,self.y_test)
@@ -59,6 +43,7 @@ class CustomDataHandler(DataHandler):
         return training_dataset
 
     def preprocess(self, training_data):
+        return training_data
         
                 
                 
